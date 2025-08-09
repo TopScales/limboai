@@ -12,7 +12,7 @@
 #include "limbo_string_names.h"
 
 #ifdef LIMBOAI_MODULE
-#define SN(m_arg) (StaticCString::create(m_arg))
+#define SN(m_arg) (StringName(m_arg))
 #endif // ! LIMBOAI_MODULE
 
 #ifdef LIMBOAI_GDEXTENSION
@@ -155,8 +155,8 @@ LimboStringNames::LimboStringNames() {
 	visibility_changed = SN("visibility_changed");
 	window_visibility_changed = SN("window_visibility_changed");
 
-	repeat_forever.parse_utf8("Repeat ∞");
-	output_var_prefix.parse_utf8("➜");
+	repeat_forever = String::utf8("Repeat ∞");
+	output_var_prefix = String::utf8("➜");
 
 	node_pp = NodePath("..");
 }
