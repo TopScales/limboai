@@ -66,8 +66,8 @@ public:
 
 #ifdef LIMBOAI_MODULE
 #define LIMBO_REGISTER_TASK(m_class)             \
-	if (m_class::_class_is_enabled) {            \
-		::LimboTaskDB::register_task<m_class>(); \
+	if constexpr (GD_IS_CLASS_ENABLED(m_class)) { \
+		::LimboTaskDB::register_task<m_class>();     \
 	}
 #elif LIMBOAI_GDEXTENSION
 #define LIMBO_REGISTER_TASK(m_class) LimboTaskDB::register_task<m_class>();

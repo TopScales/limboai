@@ -77,7 +77,7 @@ Control *TaskButton::_do_make_tooltip() const {
 	if (desc.is_empty()) {
 		desc = "[i]" + TTR("No description.") + "[/i]";
 	}
-	EditorHelpBitTooltip::show_tooltip(const_cast<TaskButton *>(this), help_symbol, desc);
+	EditorHelpBitTooltip::make_tooltip(const_cast<TaskButton *>(this), help_symbol, desc);
 #endif // LIMBOAI_MODULE
 
 #ifdef LIMBOAI_GDEXTENSION
